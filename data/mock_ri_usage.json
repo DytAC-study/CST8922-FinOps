@@ -1,0 +1,14 @@
+[
+  {
+    "instance_id": "ri-001",
+    "sku_name": "Standard_D2s_v3",
+    "quantity": 40,
+    "reserved_quantity": 100
+  },
+  {
+    "instance_id": "ri-002",
+    "sku_name": "Standard_D4s_v3",
+    "quantity": 90,
+    "reserved_quantity": 100
+  }
+]
