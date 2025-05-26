@@ -13,8 +13,8 @@ This project demonstrates an automated cost governance alert system for Reserved
 
 ## Setup
 
-```
-bashCopyEditpython3 -m venv .venv
+```bash
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -23,18 +23,14 @@ pip install -r requirements.txt
 
 Edit `monitor_ri.py` and replace your subscription ID (if using real API):
 
-```
-python
-
-
-CopyEdit
+```python
 subscription_id = "your-subscription-id"
 ```
 
 Then run:
 
-```
-bashCopyEditpython monitor_ri.py
+```bash
+python monitor_ri.py
 # or
 python summary.py
 ```
@@ -140,17 +136,13 @@ First, enable 2-step verification on your Google account, and create an App Pass
 Then, create a `.env` file in the root folder with:
 
 ```
-dotenvCopyEditSMTP_USER=your_gmail_account@gmail.com
+SMTP_USER=your_gmail_account@gmail.com
 SMTP_PASS=your_app_password_here
 ```
 
 Install required packages:
 
-```
-bash
-
-
-CopyEdit
+```bash
 pip install -r requirements.txt
 ```
 
