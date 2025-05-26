@@ -1,5 +1,5 @@
-from azure_ri_utils import get_real_ri_usage
-from email_utils import save_alert_report, export_to_csv
+# Main script (to be filled in manually)from azure_ri_utils import get_mock_ri_usage  # 也可以换成 get_real_ri_usage
+from email_utils import save_alert_report, export_to_csv, send_daily_alert_email
 
 def check_underutilization(usage_records, threshold=0.8):
     alerts = []
@@ -16,14 +16,14 @@ def check_underutilization(usage_records, threshold=0.8):
     return alerts
 
 def main():
-    subscription_id = "your-subscription-id-here"  # 用 az account show 查询并替换
-    records = get_real_ri_usage(subscription_id)
-
+    records = get_mock_ri_usage()
     alerts = check_underutilization(records)
+
     if alerts:
         print(f"[⚠️] Found {len(alerts)} underutilized RIs")
         save_alert_report(alerts)
         export_to_csv(alerts)
+        send_daily_alert_email(alerts)
     else:
         print("[✓] No underutilized RIs detected.")
 
